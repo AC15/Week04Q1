@@ -38,6 +38,8 @@ public class StackApplication {
                     pop();
                     break;
             }
+
+            contents();
         }
 
         scanner.close();
@@ -56,5 +58,10 @@ public class StackApplication {
     private static void pop() {
         arrayStack.pop();
         linkedStack.pop();
+    }
+
+    private static void contents() {
+        System.out.println(arrayStack.toString());
+        System.out.println(linkedStack.toString());
     }
 }
