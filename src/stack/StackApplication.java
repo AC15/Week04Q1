@@ -6,8 +6,8 @@ import java.util.Scanner;
  * Created by AC15 on 18/02/2018
  */
 public class StackApplication {
-    private static ArrayStack<String> arrayStack = new ArrayStack<>();
-    private static LinkedStack<String> linkedStack = new LinkedStack<>();
+    private static Stack<String> arrayStack = new ArrayStack<>();
+    private static Stack<String> linkedStack = new LinkedStack<>();
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -16,7 +16,8 @@ public class StackApplication {
         while (quit) {
             System.out.println("Choose an option.\n" +
                     "0: Quit\n" +
-                    "1: Add");
+                    "1: Add\n" +
+                    "2: Top");
 
             int choice = scanner.nextInt();
 
@@ -29,6 +30,9 @@ public class StackApplication {
                     String input = scanner.next();
                     add(input);
                     break;
+                case 2:
+                    top();
+                    break;
             }
         }
 
@@ -38,5 +42,10 @@ public class StackApplication {
     private static void add(String input) {
         arrayStack.push(input);
         linkedStack.push(input);
+    }
+
+    private static void top() {
+        System.out.println(arrayStack.top());
+        System.out.println(linkedStack.top());
     }
 }
