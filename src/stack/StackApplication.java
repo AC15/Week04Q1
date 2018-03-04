@@ -17,7 +17,8 @@ public class StackApplication {
             System.out.println("Choose an option.\n" +
                     "0: Quit\n" +
                     "1: Add\n" +
-                    "2: Top");
+                    "2: Top\n" +
+                    "3: Pop");
 
             int choice = scanner.nextInt();
 
@@ -33,6 +34,9 @@ public class StackApplication {
                 case 2:
                     top();
                     break;
+                case 3:
+                    pop();
+                    break;
             }
         }
 
@@ -47,5 +51,10 @@ public class StackApplication {
     private static void top() {
         System.out.println(arrayStack.top());
         System.out.println(linkedStack.top());
+    }
+
+    private static void pop() {
+        arrayStack.pop();
+        linkedStack.pop();
     }
 }
