@@ -12,13 +12,15 @@ public class StackApplication {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean quit = true;
+        boolean debug = true;
 
         while (quit) {
             System.out.println("Choose an option.\n" +
                     "0: Quit\n" +
                     "1: Add\n" +
                     "2: Top\n" +
-                    "3: Pop");
+                    "3: Pop\n" +
+                    "4: Debug Mode");
 
             int choice = scanner.nextInt();
 
@@ -37,9 +39,14 @@ public class StackApplication {
                 case 3:
                     pop();
                     break;
+                case 4:
+                    debug = !debug;
+                    break;
             }
 
-            contents();
+            if (debug) {
+                contents();
+            }
         }
 
         scanner.close();
