@@ -2,14 +2,14 @@ package stack;
 
 public interface Stack<T> {
     
-    public boolean isEmpty();
+    boolean isEmpty();
     
-    public void pop() throws StackUnderflowException;
+    void pop() throws StackUnderflowException;
     
-    public void push(T item);
+    void push(T item);
     
-    public T top() throws StackUnderflowException;
+    T top() throws StackUnderflowException;
     
     @Override
-    public String toString();
+    String toString();
 }
